@@ -1,12 +1,12 @@
 import React from "react";
-import Button_study from "./components/Button_study";
+import Button from "./stories/components/Button";
 
 function App() {
   return (
     <div className="App">
-      <Button_study text="sm" designType="default" size="sm" />
-      <Button_study text="nd" designType="default" size="md" />
-      <Button_study text="lg" designType="default" size="lg" />
+      <Button text="sm" designType="default" size="sm" />
+      <Button text="nd" designType="default" size="md" />
+      <Button text="lg" designType="default" size="lg" />
     </div>
   );
 }
