@@ -1,0 +1,23 @@
+/* "primary" | "defalut" | "text" | "link"; */
+
+.primary {
+  background-color: blue;
+  color: white;
+}
+
+.default {
+  background-color: white;
+  color: black;
+}
+
+.sm {
+  width: 30%;
+}
+
+.md {
+  width: 50%;
+}
+
+.lg {
+  width: 120%;
+}
