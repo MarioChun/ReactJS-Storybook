@@ -44,26 +44,28 @@ function Packbutton() {
           danger={false}
         />
       </div>
-      <h5 style={{ marginTop: "15px", marginBottom: "5px" }}>Size</h5>
+      <h5 style={{ marginTop: "15px", marginBottom: "5px" }}>
+        Size & disabled
+      </h5>
       <Button
-        text="sm"
+        text="sm & disabled"
         designType="primary"
         size="sm"
-        disabled={false}
+        disabled={true}
         danger={false}
       />
       <Button
-        text="md"
-        designType="default"
+        text="md & disabled"
+        designType="primary"
         size="md"
-        disabled={false}
+        disabled={true}
         danger={false}
       />
       <Button
-        text="lg"
-        designType="dashed"
+        text="lg & disabled"
+        designType="primary"
         size="lg"
-        disabled={false}
+        disabled={true}
         danger={false}
       />
     </div>
