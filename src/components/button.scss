@@ -1,8 +1,11 @@
 /* "primary" | "defalut" | "text" | "link"; */
 // designType
 button {
-  width: 130px;
-  height: 30px;
+  width: 120px;
+  height: 50px;
+  border-radius: 12px;
+  margin-right: 5px;
+  margin-bottom: 10px;
 }
 
 .primary {
