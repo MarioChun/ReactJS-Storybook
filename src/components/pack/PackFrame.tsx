@@ -1,5 +1,5 @@
 import React, { Children } from "react";
-import Packbutton from "./Packbutton";
+import Packbutton from "./PackButton";
 import "./packframe.scss";
 
 interface frameProps {

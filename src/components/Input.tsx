@@ -1,17 +1,36 @@
 //this binding 차이
-import { InputHTMLAttributes } from "react";
-import "./input.scss";
+import { text } from "node:stream/consumers";
+import { FC, InputHTMLAttributes } from "react";
+import "./Input.module.scss";
 
-//질문 1. 프로퍼티가 많아질수록 App.tsx쪽에 넣어줘야하는 프로퍼티 양이 많아지는데 이부분 개선시키는 방법이 없나요
-type inputProps = {
-  placeholder: string;
-  size?: "sm" | "md" | "lg";
-} & InputHTMLAttributes<HTMLInputElement>;
+type inputType = InputHTMLAttributes<HTMLInputElement>;
 
-const Input: React.FC<inputProps> = ({ placeholder, size }) => {
+type customInput = Omit<inputType, "size">;
+
+interface inputProps extends inputType {
+  placeHolder: string;
+  //size?: "sm" | "md" | "lg";
+  textArea?: true | false;
+  textMaxtLength?: number;
+}
+
+const Input: FC<inputProps> = ({
+  placeHolder,
+  //size,
+  textArea,
+  textMaxtLength,
+}) => {
   return (
     <div>
-      <input placeholder={placeholder} className={`${size}`} />
+      {textArea === true ? (
+        <textarea placeholder={placeHolder} />
+      ) : (
+        <input
+          placeholder={placeHolder}
+          maxLength={textMaxtLength}
+          //className={`${size}`}
+        />
+      )}
     </div>
   );
 };

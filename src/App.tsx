@@ -1,7 +1,7 @@
 import React from "react";
-import Packbutton from "./components/Packbutton";
-import PackFrame from "./components/PackFrame";
-import Packinput from "./components/PackInput";
+import Packbutton from "./components/pack/PackButton";
+import PackFrame from "./components/pack/PackFrame";
+import Packinput from "./components/pack/PackInput";
 import "./scss/app.scss";
 function App() {
   return (

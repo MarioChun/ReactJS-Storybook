@@ -1,7 +1,7 @@
 import React from "react";
-import Button from "./Button";
+import Button from "../Button";
 
-function Packbutton() {
+function PackButton() {
   return (
     <div>
       <h5 style={{ marginBottom: "5px" }}>Type</h5>
@@ -72,4 +72,4 @@ function Packbutton() {
   );
 }
 
-export default Packbutton;
+export default PackButton;
