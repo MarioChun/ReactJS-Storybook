@@ -1,5 +1,6 @@
 import React from "react";
 import Packbutton from "./components/pack/PackButton";
+import PackCheckBox from "./components/pack/PackCheckBox";
 import PackFrame from "./components/pack/PackFrame";
 import Packinput from "./components/pack/PackInput";
 import "./scss/app.scss";
@@ -12,6 +13,7 @@ function App() {
       </div>
       <PackFrame text="Button" children={<Packbutton />} />
       <PackFrame text="Input" children={<Packinput />} />
+      <PackFrame text="Checkbox" children={<PackCheckBox />} />
     </div>
   );
 }

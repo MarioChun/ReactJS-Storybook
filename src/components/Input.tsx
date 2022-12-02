@@ -1,5 +1,4 @@
 //this binding 차이
-import { text } from "node:stream/consumers";
 import { FC, InputHTMLAttributes } from "react";
 import styles from "./Input.module.scss";
 
