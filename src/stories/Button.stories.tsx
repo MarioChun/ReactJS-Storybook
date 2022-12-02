@@ -17,17 +17,3 @@ Primary.args = {
   text: "primary",
   designType: "primary",
 };
-
-export const Disabled = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Disabled.args = {
-  text: "primary disabled",
-  designType: "primary",
-};
-
-export const Default = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Default.args = {
-  text: "default",
-  designType: "default",
-};

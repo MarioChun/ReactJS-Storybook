@@ -8,7 +8,7 @@ type inputType = InputHTMLAttributes<HTMLInputElement>;
 type customInput = Omit<inputType, "size">;
 
 interface inputProps extends customInput {
-  placeHolder: string;
+  placeholder: string;
   size?: "sm" | "md" | "lg";
   textArea?: true | false;
   textMaxtLength?: number;
@@ -16,7 +16,7 @@ interface inputProps extends customInput {
 }
 
 const Input: FC<inputProps> = ({
-  placeHolder,
+  placeholder,
   size,
   textArea,
   textMaxtLength,
@@ -25,13 +25,13 @@ const Input: FC<inputProps> = ({
   return (
     <div>
       {textArea === true ? (
-        <textarea placeholder={placeHolder} />
+        <textarea placeholder={placeholder} />
       ) : icon === true ? (
         <div className={styles[`search`]}>
           <input
             className={styles[`icon-input`]}
             type="text"
-            placeholder={placeHolder}
+            placeholder={placeholder}
             maxLength={textMaxtLength}
           />
           <img
@@ -41,7 +41,7 @@ const Input: FC<inputProps> = ({
         </div>
       ) : (
         <input
-          placeholder={placeHolder}
+          placeholder={placeholder}
           maxLength={textMaxtLength}
           className={styles[`${size}`]}
         />
