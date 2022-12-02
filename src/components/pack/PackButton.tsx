@@ -9,40 +9,25 @@ function PackButton() {
         <Button
           text="primary"
           designType="primary"
-          size=""
           disabled={false}
           danger={false}
         />
         <Button
           text="defalut"
           designType="default"
-          size=""
           disabled={false}
           danger={false}
         />
         <Button
           text="dashed"
           designType="dashed"
-          size=""
           disabled={false}
           danger={false}
         />
       </div>
       <div style={{ display: "flex", justifyContent: "left" }}>
-        <Button
-          text="text"
-          designType="text"
-          size=""
-          disabled={false}
-          danger={false}
-        />
-        <Button
-          text="link"
-          designType="link"
-          size=""
-          disabled={false}
-          danger={false}
-        />
+        <Button text="text" designType="text" disabled={false} danger={false} />
+        <Button text="link" designType="link" disabled={false} danger={false} />
       </div>
       <h5 style={{ marginTop: "15px", marginBottom: "5px" }}>
         Size & disabled

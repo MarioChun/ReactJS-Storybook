@@ -1,20 +1,41 @@
-input{
-    width: 20vw;
-    height: 2vh;
+input {
+  width: 20vw;
+  height: 2vh;
 }
 
-textarea{
-    width: 20vw;
+textarea {
+  width: 20vw;
 }
 
-// .sm{
-//     height: 1vh;
-// }
+.sm {
+  height: 1vh;
+}
 
-// .md{
-//     height: 2vh;
-// }
+.md {
+  height: 2vh;
+}
 
-// .lg{
-//     height: 4vh;
-// }
+.lg {
+  height: 4vh;
+}
+
+.search {
+  position: relative;
+  width: 15vw;
+}
+
+.icon-input {
+  width: 100%;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.icon-img {
+  position: absolute;
+  width: 17px;
+  top: 11px;
+  right: -10px;
+  margin: 0;
+}
