@@ -24,26 +24,30 @@ const Input: FC<inputProps> = ({
   return (
     <div>
       {textArea === true ? (
-        <textarea placeholder={placeholder} />
+        <div className={styles[`inputContainer`]}>
+          <textarea placeholder={placeholder} />
+        </div>
       ) : icon === true ? (
         <div className={styles[`search`]}>
           <input
-            className={styles[`icon-input`]}
+            className={styles[`iconInput`]}
             type="text"
             placeholder={placeholder}
             maxLength={textMaxtLength}
           />
           <img
-            className={styles[`icon-img`]}
+            className={styles[`iconImg`]}
             src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png"
           />
         </div>
       ) : (
-        <input
-          placeholder={placeholder}
-          maxLength={textMaxtLength}
-          className={styles[`${size}`]}
-        />
+        <div className={styles[`inputContainer`]}>
+          <input
+            placeholder={placeholder}
+            maxLength={textMaxtLength}
+            className={styles[`${size}`]}
+          />
+        </div>
       )}
     </div>
   );

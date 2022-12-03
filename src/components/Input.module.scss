@@ -1,10 +1,16 @@
-input {
-  width: 20vw;
-  height: 2vh;
-}
 
-textarea {
-  width: 20vw;
+.inputContainer {
+  input {
+    width: 20vw;
+    height: 2vh;
+    border: 1px solid #bbb;
+  border-radius: 4px;
+  }
+  textarea {
+    width: 20vw;
+    border: 1px solid #bbb;
+  border-radius: 4px;
+  }
 }
 
 .sm {
@@ -24,7 +30,7 @@ textarea {
   width: 15vw;
 }
 
-.icon-input {
+.iconInput {
   width: 100%;
   border: 1px solid #bbb;
   border-radius: 4px;
@@ -32,7 +38,7 @@ textarea {
   font-size: 14px;
 }
 
-.icon-img {
+.iconImg {
   position: absolute;
   width: 17px;
   top: 11px;

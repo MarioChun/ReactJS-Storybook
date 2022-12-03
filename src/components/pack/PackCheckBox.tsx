@@ -5,7 +5,7 @@ const PackCheckBox = () => {
     <div>
       <h5 style={{ marginBottom: "5px" }}>default Type</h5>
 
-      <CheckBox />
+      <CheckBox text="default checkBox" />
 
       <h5 style={{ marginTop: "15px", marginBottom: "5px" }}>Size</h5>
     </div>
