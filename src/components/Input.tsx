@@ -2,19 +2,19 @@
 import { FC, InputHTMLAttributes } from "react";
 import styles from "./Input.module.scss";
 
-type inputType = InputHTMLAttributes<HTMLInputElement>;
+type InputType = InputHTMLAttributes<HTMLInputElement>;
 
-type customInput = Omit<inputType, "size">;
+type CustomInput = Omit<InputType, "size">;
 
-interface inputProps extends customInput {
+interface IInputProps extends CustomInput {
   placeholder: string;
   size?: "sm" | "md" | "lg";
   textArea?: true | false;
   textMaxtLength?: number;
-  icon?: true | false;
+  icon?: boolean;
 }
 
-const Input: FC<inputProps> = ({
+const Input: FC<IInputProps> = ({
   placeholder,
   size,
   textArea,
