@@ -13,18 +13,13 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   danger: boolean;
 }
 
-const Button: React.FC<IButtonProps> = ({
-  text,
-  designType,
-  size,
-  disabled,
-}) => {
+const Button = ({ text, designType, size, disabled }: IButtonProps) => {
   return (
-    <div className={styles[`buttonContainer`]}>
+    <div className={styles.buttonContainer}>
       {/* 질문 2 프로퍼티 중에 true false 가 여러개 있을때 분기처리 부분을 어떻게 해야하나요? */}
       {disabled ? (
         <button
-          className={[styles[`${designType}`], styles[`${size}`]].join(" ")}
+          className={[styles[`${designType}`], styles[`${size}`]].join(" ")} //[styles[designType], styles[size]].join(" ")
           disabled
         >
           {text}

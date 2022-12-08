@@ -7,7 +7,7 @@ interface ICheckBoxProps extends InputHTMLAttributes<HTMLInputElement> {
   // 버튼 클릭 -> 체크 또는 언체크 및 disabled 버튼
 }
 
-const CheckBox: FC<ICheckBoxProps> = ({ text }) => {
+const CheckBox = ({ text }: ICheckBoxProps) => {
   return (
     <div className={styles[`checkboxContainer`]}>
       <input type="checkbox" id="scales" name="scales" />

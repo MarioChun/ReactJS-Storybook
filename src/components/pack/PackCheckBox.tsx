@@ -1,14 +1,27 @@
+import styled from "styled-components";
 import CheckBox from "../Checkbox";
+
+const Container = styled.div`
+  h5 {
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    margin-left: 5px;
+  }
+
+  div {
+    display: flex;
+    justify-content: left;
+  }
+`;
 
 const PackCheckBox = () => {
   return (
-    <div>
-      <h5 style={{ marginBottom: "5px" }}>default Type</h5>
-
+    <Container>
+      <h5>default Type</h5>
       <CheckBox text="default checkBox" />
-
-      <h5 style={{ marginTop: "15px", marginBottom: "5px" }}>Size</h5>
-    </div>
+      <h5>Size</h5>
+    </Container>
   );
 };
 

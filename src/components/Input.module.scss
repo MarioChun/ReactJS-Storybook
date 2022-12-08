@@ -1,24 +1,26 @@
 
 .inputContainer {
   input {
-    width: 20vw;
-    height: 2vh;
+    padding: 2px 12px;
+    width: 360px;
     border: 1px solid #bbb;
     border-radius: 4px;
+    margin-bottom: 5px;
   }
   textarea {
-    width: 20vw;
+    width: 360px;
     border: 1px solid #bbb;
     border-radius: 4px;
+    margin-bottom: 5px;
   }
 }
 
 .sm {
-  height: 3vh;
+  height: 2vh;
 }
 
 .md {
-  height: 5vh;
+  height: 4vh;
 }
 
 .lg {
@@ -27,7 +29,7 @@
 
 .search {
   position: relative;
-  width: 15vw;
+  width:360px;
 }
 
 .iconInput {
@@ -42,6 +44,6 @@
   position: absolute;
   width: 17px;
   top: 11px;
-  right: -10px;
+  right: 5px;
   margin: 0;
 }

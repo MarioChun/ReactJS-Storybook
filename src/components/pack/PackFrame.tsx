@@ -1,18 +1,24 @@
-import React, { Children } from "react";
-import Packbutton from "./PackButton";
-import "./packframe.scss";
+import styled from "styled-components";
 
-interface frameProps {
+interface IFrameProps {
   text: string;
   children?: React.ReactNode;
 }
 
-const PackFrame: React.FC<frameProps> = ({ text, children }) => {
+const Container = styled.div`
+  h3 {
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+`;
+
+const PackFrame = ({ text, children }: IFrameProps) => {
   return (
-    <div className="frameline">
+    <Container>
       <h3>{text}</h3>
       {children}
-    </div>
+    </Container>
   );
 };
 

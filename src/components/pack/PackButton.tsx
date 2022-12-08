@@ -1,11 +1,25 @@
-import React from "react";
 import Button from "../Button";
+import styled from "styled-components";
+
+const Container = styled.div`
+  h5 {
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    margin-left: 5px;
+  }
+
+  div {
+    display: flex;
+    justify-content: left;
+  }
+`;
 
 function PackButton() {
   return (
-    <div>
-      <h5 style={{ marginBottom: "5px" }}>Type</h5>
-      <div style={{ display: "flex", justifyContent: "left" }}>
+    <Container>
+      <h5>Type</h5>
+      <div>
         <Button
           text="primary"
           designType="primary"
@@ -25,13 +39,11 @@ function PackButton() {
           danger={false}
         />
       </div>
-      <div style={{ display: "flex", justifyContent: "left" }}>
+      <div>
         <Button text="text" designType="text" disabled={false} danger={false} />
         <Button text="link" designType="link" disabled={false} danger={false} />
       </div>
-      <h5 style={{ marginTop: "15px", marginBottom: "5px" }}>
-        Size & disabled
-      </h5>
+      <h5>Size & disabled</h5>
       <Button
         text="sm & disabled"
         designType="primary"
@@ -53,7 +65,7 @@ function PackButton() {
         disabled={true}
         danger={false}
       />
-    </div>
+    </Container>
   );
 }
 
