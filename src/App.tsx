@@ -81,7 +81,7 @@ const Header = styled.div`
   h1 {
     margin-top: 50px;
     font-weight: 400;
-    font-size: 36px;
+    font-size: 32px;
   }
   h3 {
     font-size: 20px;
