@@ -93,7 +93,7 @@ const Overview = styled.div`
   justify-content: space-between;
   background-color: transparent;
   border: solid;
-  padding: 10px 20px;
+  padding: 20px 20px;
   border-radius: 10px;
   margin-bottom: 20px;
 `;
@@ -108,15 +108,21 @@ function App() {
           <h3>Component implementation with Storybook.</h3>
         </Header>
         <Overview>
-          <PackFrame text="Button" children={<Packbutton />} />
+          <PackFrame text="Button">
+            <Packbutton />
+          </PackFrame>
         </Overview>
 
         <Overview>
-          <PackFrame text="Input" children={<Packinput />} />
+          <PackFrame text="Input">
+            <Packinput />
+          </PackFrame>
         </Overview>
 
         <Overview>
-          <PackFrame text="Checkbox" children={<PackCheckBox />} />
+          <PackFrame text="Checkbox">
+            <PackCheckBox />
+          </PackFrame>
         </Overview>
       </Container>
     </>

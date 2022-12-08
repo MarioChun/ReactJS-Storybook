@@ -9,7 +9,7 @@ interface ICheckBoxProps extends InputHTMLAttributes<HTMLInputElement> {
 
 const CheckBox = ({ text }: ICheckBoxProps) => {
   return (
-    <div className={styles[`checkboxContainer`]}>
+    <div className={styles.container}>
       <input type="checkbox" id="scales" name="scales" />
       <label htmlFor="scales">{text}</label>
     </div>

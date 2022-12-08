@@ -1,8 +1,8 @@
+import { PropsWithChildren } from "react";
 import styled from "styled-components";
 
-interface IFrameProps {
+interface IFrameProps extends PropsWithChildren {
   text: string;
-  children?: React.ReactNode;
 }
 
 const Container = styled.div`

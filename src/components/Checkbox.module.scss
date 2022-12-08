@@ -1,5 +1,8 @@
-.checkboxContainer {
+.container {
   input {
     width: 3vw;
   }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
