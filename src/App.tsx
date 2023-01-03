@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { createGlobalStyle } from "styled-components";
+import Modal from "./components/Modal";
 import Packbutton from "./components/pack/PackButton";
 import PackCheckBox from "./components/pack/PackCheckBox";
+import PackCssPostion from "./components/pack/PackCssPosition";
 import PackFrame from "./components/pack/PackFrame";
 import Packinput from "./components/pack/PackInput";
+import ButtonStudy from "./components/ButtonStudy";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
@@ -99,6 +102,11 @@ const Overview = styled.div`
 `;
 
 function App() {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const handleOpen = () => setIsOpen(true);
+  const handleClose = () => {
+    setIsOpen(false);
+  };
   return (
     <>
       <GlobalStyle />
@@ -122,6 +130,29 @@ function App() {
         <Overview>
           <PackFrame text="Checkbox">
             <PackCheckBox />
+          </PackFrame>
+        </Overview>
+
+        {/* <Overview>
+          <PackFrame text="CSS Position Playground">
+            <PackCssPostion />
+          </PackFrame>
+        </Overview> */}
+
+        <Overview>
+          <PackFrame text="Modal">
+            <ButtonStudy
+              text="Modal"
+              // onClick={() => alert("modal click")}
+              onClick={handleOpen}
+            ></ButtonStudy>
+
+            {isOpen && (
+              <Modal onClose={handleClose}>
+                <div>모달제목</div>
+                <div>모달내용...</div>
+              </Modal>
+            )}
           </PackFrame>
         </Overview>
       </Container>
