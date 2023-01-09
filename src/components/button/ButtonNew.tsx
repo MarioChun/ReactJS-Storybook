@@ -1,5 +1,5 @@
 import React, { ButtonHTMLAttributes, ReactNode } from "react";
-import styles from "./ButtonStudy.module.scss";
+import styles from "./ButtonNew.module.scss";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 type ButtonProps = {

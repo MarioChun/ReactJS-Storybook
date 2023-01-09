@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Input from "../Input";
+import Input from "../input/Input";
 
 const Container = styled.div`
   h5 {

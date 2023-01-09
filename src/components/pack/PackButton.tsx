@@ -1,4 +1,4 @@
-import Button from "../Button";
+import Button from "../button/Button";
 import styled from "styled-components";
 
 const Container = styled.div`

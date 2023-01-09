@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import CheckBox from "../Checkbox";
+import CheckBox from "../checkbox/Checkbox";
 
 const Container = styled.div`
   h5 {
