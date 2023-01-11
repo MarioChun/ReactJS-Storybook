@@ -1,5 +1,5 @@
 //this binding 차이
-import { PropsWithChildren, useState } from "react";
+import { PropsWithChildren } from "react";
 import { IoMdClose } from "react-icons/io";
 import styles from "./Modal.module.scss";
 

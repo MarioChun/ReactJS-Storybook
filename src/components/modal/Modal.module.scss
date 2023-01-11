@@ -14,15 +14,19 @@
   width: 400px;
 }
 .modalContent {
-  padding: 20px;
+  padding: 50px;
 }
 
 .modalHeader {
-  padding: 20px;
+  padding: 10px;
   display: flex;
   justify-content: flex-end;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: rgb(45, 45, 195);
 }
 
 .closeButton {
   cursor: pointer;
+  color: white;
 }

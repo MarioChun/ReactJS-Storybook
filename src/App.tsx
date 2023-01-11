@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import ResetStyle from "./styles/ResetStyle";
-import styled, { createGlobalStyle } from "styled-components";
-import Modal from "./components/modal/Modal";
+import styled from "styled-components";
 import Packbutton from "./components/pack/PackButton";
 import PackCheckBox from "./components/pack/PackCheckBox";
-import PackCssPostion from "./components/pack/PackCssPosition";
 import PackFrame from "./components/pack/PackFrame";
 import Packinput from "./components/pack/PackInput";
-import ButtonNew from "./components/button/ButtonNew";
-import ModalTestPage from "./components/modal/ModalTestPage";
-import useModal from "./hook/useModal";
+import PackModal from "./components/pack/PackModal";
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -46,15 +42,6 @@ const Overview = styled.div`
 `;
 
 function App() {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const handleOpen = () => setIsOpen(true);
-  const handleClose = () => {
-    setIsOpen(false);
-  };
-
-  const modal1 = useModal();
-  const modal2 = useModal();
-
   return (
     <>
       <ResetStyle />
@@ -81,6 +68,7 @@ function App() {
           </PackFrame>
         </Overview>
 
+        {/* Mario.Chun : 주석처리 할때 {} 가 필요 */}
         {/* <Overview>
           <PackFrame text="CSS Position Playground">
             <PackCssPostion />
@@ -89,30 +77,7 @@ function App() {
 
         <Overview>
           <PackFrame text="Modal">
-            <ButtonNew
-              text="Modal"
-              // onClick={() => alert("modal click")}
-              onClick={handleOpen}
-            ></ButtonNew>
-
-            {isOpen && (
-              <Modal onClose={handleClose}>
-                <div>모달제목</div>
-                <div>모달내용...</div>
-              </Modal>
-            )}
-
-            <ModalTestPage />
-
-            <ButtonNew text={"모달1 열기"} onClick={modal1.handleOpen} />
-            {modal1.isOpen && (
-              <Modal onClose={modal1.handleClose}>Modal1 Content</Modal>
-            )}
-
-            <ButtonNew text={"모달2 열기"} onClick={modal2.handleOpen} />
-            {modal2.isOpen && (
-              <Modal onClose={modal2.handleClose}>Modal2 Content</Modal>
-            )}
+            <PackModal />
           </PackFrame>
         </Overview>
       </Container>

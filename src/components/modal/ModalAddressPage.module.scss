@@ -1,0 +1,17 @@
+.postCodeModalContainer {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 10px;
+}
+
+.postCodeContainer {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.submitButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
