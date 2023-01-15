@@ -1,25 +1,25 @@
-.common-container{
+.commonContainer{
     width: 400px;
 }
 
-.search-container{
+.searchContainer{
    padding : 10px 5px 10px 5px;
 }
 
-.search-value-container{
+.searchValueContainer{
     display: grid;
     gap: 5px;
     grid-auto-flow: row;
     align-items: center;
 }
 
-.search-value-input{
+.searchValueInput{
     border: 1px solid #afafaf;
     border-radius: 5px;
     padding: 10px 40px;
 }
 
-.search-value-btn{
+.searchValueBtn{
     border: none;
     background: blue;
     padding: 10px 20px;
@@ -27,7 +27,7 @@
     border-radius: 10px;
 }
 
-.search-btn-container{
+.searchBtnContainer{
     margin-top: 10px;
     display: grid;
     gap: 5px;
@@ -40,7 +40,7 @@
     }
 }
 
-.search-btn{
+.searchBtn{
     border: none;
     background: #efefef;
     padding: 10px 20px;
@@ -54,13 +54,13 @@
     }
 }
 
-.search-result-list-container{
+.searchResultListContainer{
     border: 1px solid #afafaf;
     height: 200px;
     overflow: auto;
 }
 
-.search-result-list{
+.searchResultList{
     list-style: none;
     padding: 15px;
     margin: 0;
@@ -82,7 +82,7 @@
     }
 }
 
-.coffee-item{
+.coffeeItem{
     &:hover{
         background: black;
         color: #efefef;

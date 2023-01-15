@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./index.scss";
+import styles from "./index.module.scss";
 import CoffeeDB from "../db/CoffeeDB";
 import ButtonNew from "../../button/ButtonNew";
 
@@ -29,20 +29,20 @@ const CoffeeListPage = () => {
   }, []);
 
   return (
-    <div className="common-container">
-      <div className="search-container">
-        <div className="search-value-container">
+    <div className={styles.commonContainer}>
+      <div className={styles.searchContainer}>
+        <div className={styles.searchValueContainer}>
           <input
             placeholder="커피의 이름을 입력하세요"
             value={searchValue}
             onChange={(event) => setSearchValue(event.target.value)}
-            className="search-value-input"
+            className={styles.searchValueInput}
           ></input>
-          <button className="search-value-btn" onClick={clickSearch}>
+          <button className={styles.searchValueBtn} onClick={clickSearch}>
             찾기
           </button>
         </div>
-        <div className="search-btn-container">
+        <div className={styles.searchBtnContainer}>
           <label>선택버튼</label>
 
           {["iced", "hot"].map((item, i) => (
@@ -53,10 +53,10 @@ const CoffeeListPage = () => {
           ))}
         </div>
       </div>
-      <div className="search-result-list-container">
-        <ul className="search-result-list">
+      <div className={styles.searchResultListContainer}>
+        <ul className={styles.searchResultList}>
           {list.map((item, i) => (
-            <li className="coffee-item" key={i}>
+            <li className={styles.coffeeItem} key={i}>
               {item}
             </li>
           ))}
