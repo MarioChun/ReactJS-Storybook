@@ -9,6 +9,7 @@ import PackModal from "./components/pack/PackModal";
 import CocktailListPage from "./components/ListPage/Cocktail";
 import CoffeeListPage from "./components/ListPage/Coffee";
 import UserListPage from "./components/UserList";
+import UserListPageNew from "./components/UserList/Study/Step2";
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -86,7 +87,7 @@ function App() {
           </PackFrame>
         </Overview> */}
 
-        <Overview>
+        {/* <Overview>
           <CocktailListPage />
         </Overview>
 
@@ -94,7 +95,13 @@ function App() {
           <CoffeeListPage />
         </Overview>
 
-        <UserListPage />
+        <Overview>
+          <UserListPage />
+        </Overview> */}
+
+        <Overview>
+          <UserListPageNew />
+        </Overview>
       </Container>
     </>
   );
