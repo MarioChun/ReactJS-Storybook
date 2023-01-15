@@ -4,7 +4,7 @@ import InputNew from "../input/InputNew";
 import styles from "./ModalTestPage.module.scss";
 import ButtonNew from "../button/ButtonNew";
 
-const ModalTestPage = () => {
+const ModalAdressPage = () => {
   const confirmModal = useModal();
   const postCodeModal = useModal();
   const [postCode, setPostCode] = useState("");
@@ -18,7 +18,7 @@ const ModalTestPage = () => {
       <div>
         <InputNew value={address1} readOnly={true} />
       </div>
-      <PostCodeModal
+      {/* <PostCodeModal
         useModalProps={postCodeModal}
         onComplete={({ postCode, address }) => {
           setPostCode(postCode);
@@ -35,9 +35,9 @@ const ModalTestPage = () => {
           onClick={confirmModal.handleOpen}
         />
         <ConfirmModal useModalProps={confirmModal} />
-      </div>
+      </div> */}
     </div>
   );
 };
 
-export default ModalTestPage;
+export default ModalAdressPage;

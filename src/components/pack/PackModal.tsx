@@ -30,7 +30,7 @@ function PackModal() {
   const modal2 = useModal();
   return (
     <Container>
-      <h5>Type</h5>
+      <h5>Modal</h5>
       <ButtonNew
         text="Modal"
         // onClick={() => alert("modal click")}

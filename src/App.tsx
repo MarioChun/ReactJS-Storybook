@@ -6,6 +6,8 @@ import PackCheckBox from "./components/pack/PackCheckBox";
 import PackFrame from "./components/pack/PackFrame";
 import Packinput from "./components/pack/PackInput";
 import PackModal from "./components/pack/PackModal";
+import BeerListPage from "./components/BeerList";
+import UserListPage from "./components/UserList";
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -80,6 +82,10 @@ function App() {
             <PackModal />
           </PackFrame>
         </Overview>
+
+        <BeerListPage />
+
+        <UserListPage />
       </Container>
     </>
   );
