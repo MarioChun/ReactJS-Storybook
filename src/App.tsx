@@ -6,7 +6,7 @@ import PackCheckBox from "./components/pack/PackCheckBox";
 import PackFrame from "./components/pack/PackFrame";
 import Packinput from "./components/pack/PackInput";
 import PackModal from "./components/pack/PackModal";
-import BeerListPage from "./components/BeerList";
+import CoffeeListPage from "./components/BeerList/CoffeeList";
 import UserListPage from "./components/UserList";
 
 const Container = styled.div`
@@ -52,7 +52,10 @@ function App() {
           <h1>React + TypeScript + Storybook</h1>
           <h3>Component implementation with Storybook.</h3>
         </Header>
-        <Overview>
+
+        {/* Mario.Chun : 주석처리 할때 {} 가 필요 */}
+
+        {/* <Overview>
           <PackFrame text="Button">
             <Packbutton />
           </PackFrame>
@@ -68,22 +71,23 @@ function App() {
           <PackFrame text="Checkbox">
             <PackCheckBox />
           </PackFrame>
-        </Overview>
+        </Overview> */}
 
-        {/* Mario.Chun : 주석처리 할때 {} 가 필요 */}
         {/* <Overview>
           <PackFrame text="CSS Position Playground">
             <PackCssPostion />
           </PackFrame>
         </Overview> */}
 
-        <Overview>
+        {/* <Overview>
           <PackFrame text="Modal">
             <PackModal />
           </PackFrame>
-        </Overview>
+        </Overview> */}
 
-        <BeerListPage />
+        <Overview>
+          <CoffeeListPage />
+        </Overview>
 
         <UserListPage />
       </Container>
