@@ -1,27 +1,27 @@
 import "./index.scss";
 import { useEffect, useState } from "react";
-import CocktailDB from "./db/CocktailDB";
+import CocktailDB from "../db/CocktailDB";
 
-const BeerListPage = () => {
+const CocktailListPage = () => {
   const [searchValue, setSearchValue] = useState("");
   const [list, setList] = useState<string[]>([]);
   // const list: string[] = [
-  //   "맥주이름",
-  //   "맥주이름",
-  //   "맥주이름",
-  //   "맥주이름",
-  //   "맥주이름",
-  //   "맥주이름",
-  //   "맥주이름",
-  //   "맥주이름",
-  //   "맥주이름",
-  //   "맥주이름",
-  //   "맥주이름",
-  //   "맥주이름",
-  //   "맥주이름",
-  //   "맥주이름",
-  //   "맥주이름",
-  //   "맥주이름",
+  //   "칵테일이름",
+  //   "칵테일이름",
+  //   "칵테일이름",
+  //   "칵테일이름",
+  //   "칵테일이름",
+  //   "칵테일이름",
+  //   "칵테일이름",
+  //   "칵테일이름",
+  //   "칵테일이름",
+  //   "칵테일이름",
+  //   "칵테일이름",
+  //   "칵테일이름",
+  //   "칵테일이름",
+  //   "칵테일이름",
+  //   "칵테일이름",
+  //   "칵테일이름",
   // ];
 
   // const handleClickSearch = () => alert("검색");
@@ -43,7 +43,7 @@ const BeerListPage = () => {
         <div className="search-value-container">
           <input
             className="search-input"
-            placeholder="맥주의 이름을 입력하세요"
+            placeholder="칵테일의 이름을 입력하세요"
             value={searchValue}
             onChange={(event) => setSearchValue(event.target.value)}
           />
@@ -86,4 +86,4 @@ const BeerListPage = () => {
   );
 };
 
-export default BeerListPage;
+export default CocktailListPage;

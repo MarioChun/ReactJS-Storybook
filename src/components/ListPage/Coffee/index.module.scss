@@ -1,0 +1,90 @@
+.commonContainer{
+    width: 400px;
+}
+
+.searchContainer{
+   padding : 10px 5px 10px 5px;
+}
+
+.searchValueContainer{
+    display: grid;
+    gap: 5px;
+    grid-auto-flow: row;
+    align-items: center;
+}
+
+.searchValueInput{
+    border: 1px solid #afafaf;
+    border-radius: 5px;
+    padding: 10px 40px;
+}
+
+.searchValueBtn{
+    border: none;
+    background: blue;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 10px;
+}
+
+.searchBtnContainer{
+    margin-top: 10px;
+    display: grid;
+    gap: 5px;
+    grid-auto-flow: column;
+    align-items: center;
+    font-size: 15px;
+
+    label {
+        font-size: 12px;
+    }
+}
+
+.searchBtn{
+    border: none;
+    background: #efefef;
+    padding: 10px 20px;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover{
+        background: black;
+        color: #efefef;
+    }
+}
+
+.searchResultListContainer{
+    border: 1px solid #afafaf;
+    height: 200px;
+    overflow: auto;
+}
+
+.searchResultList{
+    list-style: none;
+    padding: 15px;
+    margin: 0;
+    display: grid;
+    gap: 5px;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr);
+
+    li{
+    cursor: pointer;
+    background: white;
+    border: 1px solid #afafaf;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 10px 20px;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+    }
+}
+
+.coffeeItem{
+    &:hover{
+        background: black;
+        color: #efefef;
+    }
+}
