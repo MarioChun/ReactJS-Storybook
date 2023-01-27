@@ -8,6 +8,8 @@ import Packinput from "./components/pack/PackInput";
 import PackModal from "./components/pack/PackModal";
 import BeerListPage from "./components/BeerList";
 import UserListPage from "./components/UserList";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import FormLevel1Page1 from "./pages/form-level/step1/index.page";
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -45,49 +47,11 @@ const Overview = styled.div`
 
 function App() {
   return (
-    <>
-      <ResetStyle />
-      <Container>
-        <Header>
-          <h1>React + TypeScript + Storybook</h1>
-          <h3>Component implementation with Storybook.</h3>
-        </Header>
-        <Overview>
-          <PackFrame text="Button">
-            <Packbutton />
-          </PackFrame>
-        </Overview>
-
-        <Overview>
-          <PackFrame text="Input">
-            <Packinput />
-          </PackFrame>
-        </Overview>
-
-        <Overview>
-          <PackFrame text="Checkbox">
-            <PackCheckBox />
-          </PackFrame>
-        </Overview>
-
-        {/* Mario.Chun : 주석처리 할때 {} 가 필요 */}
-        {/* <Overview>
-          <PackFrame text="CSS Position Playground">
-            <PackCssPostion />
-          </PackFrame>
-        </Overview> */}
-
-        <Overview>
-          <PackFrame text="Modal">
-            <PackModal />
-          </PackFrame>
-        </Overview>
-
-        <BeerListPage />
-
-        <UserListPage />
-      </Container>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<FormLevel1Page1 />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
