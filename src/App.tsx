@@ -8,13 +8,11 @@ import Packinput from "./components/pack/PackInput";
 import PackModal from "./components/pack/PackModal";
 import CocktailListPage from "./components/ListPage/Cocktail";
 import CoffeeListPage from "./components/ListPage/Coffee";
-import UserListPage from "./components/UserList";
-<<<<<<< HEAD
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FormLevel1Page1 from "./pages/form-level/step1/index.page";
-=======
+
 import UserListPageNew from "./components/UserList/Study/Step2";
->>>>>>> 0c16185a68ef896e7e20db4e11b593b871968fca
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -52,71 +50,69 @@ const Overview = styled.div`
 
 function App() {
   return (
-<<<<<<< HEAD
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<FormLevel1Page1 />}></Route>
       </Routes>
     </BrowserRouter>
-=======
-    <>
-      <ResetStyle />
-      <Container>
-        <Header>
-          <h1>React + TypeScript + Storybook</h1>
-          <h3>Component implementation with Storybook.</h3>
-        </Header>
 
-        {/* Mario.Chun : 주석처리 할때 {} 가 필요 */}
+    // <>
+    //   <ResetStyle />
+    //   <Container>
+    //     <Header>
+    //       <h1>React + TypeScript + Storybook</h1>
+    //       <h3>Component implementation with Storybook.</h3>
+    //     </Header>
 
-        {/* <Overview>
-          <PackFrame text="Button">
-            <Packbutton />
-          </PackFrame>
-        </Overview>
+    //Mario.Chun : 주석처리 할때 {} 가 필요
 
-        <Overview>
-          <PackFrame text="Input">
-            <Packinput />
-          </PackFrame>
-        </Overview>
+    //  <Overview>
+    //     <PackFrame text="Button">
+    //       <Packbutton />
+    //     </PackFrame>
+    //   </Overview>
 
-        <Overview>
-          <PackFrame text="Checkbox">
-            <PackCheckBox />
-          </PackFrame>
-        </Overview> */}
+    //   <Overview>
+    //     <PackFrame text="Input">
+    //       <Packinput />
+    //     </PackFrame>
+    //   </Overview>
 
-        {/* <Overview>
-          <PackFrame text="CSS Position Playground">
-            <PackCssPostion />
-          </PackFrame>
-        </Overview> */}
+    //   <Overview>
+    //     <PackFrame text="Checkbox">
+    //       <PackCheckBox />
+    //     </PackFrame>
+    //   </Overview>
 
-        {/* <Overview>
-          <PackFrame text="Modal">
-            <PackModal />
-          </PackFrame>
-        </Overview> */}
+    //   <Overview>
+    //     <PackFrame text="CSS Position Playground">
+    //       <PackCssPostion />
+    //     </PackFrame>
+    //   </Overview>
 
-        {/* <Overview>
-          <CocktailListPage />
-        </Overview>
+    //   <Overview>
+    //     <PackFrame text="Modal">
+    //       <PackModal />
+    //     </PackFrame>
+    //   </Overview>
 
-        <Overview>
-          <CoffeeListPage />
-        </Overview>
+    //  <Overview>
+    //       <CocktailListPage />
+    //     </Overview>
 
-        <Overview>
-          <UserListPage />
-        </Overview> */}
+    //     <Overview>
+    //       <CoffeeListPage />
+    //     </Overview>
 
-        <Overview>
-          <UserListPageNew />
-        </Overview>
-      </Container>
-    </>
->>>>>>> 0c16185a68ef896e7e20db4e11b593b871968fca
+    //     <Overview>
+    //       <UserListPage />
+    //     </Overview>
+
+    //     <Overview>
+    //       <UserListPageNew />
+    //     </Overview>
+    //   </Container>
+    // </>
   );
 }
 
