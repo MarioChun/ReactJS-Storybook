@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import useModal from "../../hook/useModal";
-import ButtonNew from "../button/ButtonNew";
+import ButtonNew from "../button/Button";
 import Modal from "../modal/Modal";
 import ModalTestPage from "../modal/ModalPage";
 

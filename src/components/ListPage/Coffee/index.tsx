@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./index.module.scss";
 import CoffeeDB from "../db/CoffeeDB";
-import ButtonNew from "../../button/ButtonNew";
+import ButtonNew from "../../button/Button";
 
 const CoffeeListPage = () => {
   const [searchValue, setSearchValue] = useState("");

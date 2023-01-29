@@ -1,60 +1,65 @@
-//this binding 차이
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { InputHTMLAttributes } from "react";
-import styled from "styled-components";
+import React, { InputHTMLAttributes, ReactElement } from "react";
 import styles from "./Input.module.scss";
+import { AiFillCloseCircle } from "react-icons/ai";
 
-type InputType = InputHTMLAttributes<HTMLInputElement>;
+type InputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "size" | "prefix" | "suffix" | "onChange"
+> & {
+  size?: "small" | "default" | "large";
+  prefix?: string | ReactElement;
+  suffix?: string | ReactElement;
+  addOnBefore?: string | ReactElement;
+  addOnAfter?: string | ReactElement;
+  clear?: boolean;
+  onChange?: (value: string) => void;
+};
 
-type CustomInput = Omit<InputType, "size">;
-
-interface IInputProps extends CustomInput {
-  placeholder: string;
-  size?: "sm" | "md" | "lg";
-  textArea?: boolean;
-  textMaxtLength?: number;
-  icon?: boolean;
-}
-
-const Container = styled.div``;
-
-const Input = ({
-  placeholder,
-  size,
-  textArea,
-  textMaxtLength,
-  icon,
-}: IInputProps) => {
+const Input: React.FC<InputProps> = ({
+  type,
+  size = "default",
+  className,
+  prefix,
+  suffix,
+  addOnBefore,
+  addOnAfter,
+  clear = false,
+  ...props
+}) => {
+  const classNames = [
+    styles.outerContainer,
+    styles[size],
+    addOnBefore ? styles.addOnBefore : "",
+    addOnAfter ? styles.addOnAfter : "",
+    props.readOnly ? styles.readOnly : "",
+    className,
+  ].join(" ");
   return (
-    <Container>
-      {textArea === true ? (
-        <div className={styles.inputContainer}>
-          <textarea placeholder={placeholder} />
-        </div>
-      ) : icon === true ? (
-        <div className={styles.search}>
-          <input
-            className={styles.iconInput}
-            type="text"
-            placeholder={placeholder}
-            maxLength={textMaxtLength}
-          />
-          <FontAwesomeIcon
-            className={styles.iconImg}
-            icon={faMagnifyingGlass}
-          />
-        </div>
-      ) : (
-        <div className={styles.inputContainer}>
-          <input
-            placeholder={placeholder}
-            maxLength={textMaxtLength}
-            className={styles[`${size}`]}
-          />
-        </div>
+    <div className={classNames}>
+      {addOnBefore && (
+        <div className={styles.addOnContainer}>{addOnBefore}</div>
       )}
-    </Container>
+      <div className={styles.inputContainer}>
+        {prefix && <div className={styles.prefix}>{prefix}</div>}
+        <input
+          type={type}
+          className={styles.input}
+          {...props}
+          onChange={(event) => props.onChange?.(event.currentTarget.value)}
+        />
+        {clear && (
+          <AiFillCloseCircle
+            className={styles.closeCircle}
+            onMouseDown={(event) => {
+              props.onChange?.("");
+              event.preventDefault();
+            }}
+          />
+        )}
+        {suffix && <div className={styles.suffix}>{suffix}</div>}
+      </div>
+      {addOnAfter && <div className={styles.addOnContainer}>{addOnAfter}</div>}
+    </div>
   );
 };
 

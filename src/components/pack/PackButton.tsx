@@ -47,21 +47,21 @@ function PackButton() {
       <Button
         text="sm & disabled"
         designType="primary"
-        size="sm"
+        size="small"
         disabled={true}
         danger={false}
       />
       <Button
         text="md & disabled"
         designType="primary"
-        size="md"
+        size="medium"
         disabled={true}
         danger={false}
       />
       <Button
         text="lg & disabled"
         designType="primary"
-        size="lg"
+        size="large"
         disabled={true}
         danger={false}
       />

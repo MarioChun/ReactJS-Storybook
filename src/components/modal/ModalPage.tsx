@@ -1,6 +1,6 @@
 //this binding 차이
 import { PropsWithChildren, useState } from "react";
-import ButtonNew from "../button/ButtonNew";
+import ButtonNew from "../button/Button";
 import Modal from "./Modal";
 
 interface IModalProps extends PropsWithChildren {

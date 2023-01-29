@@ -23,16 +23,16 @@ const Packinput = () => {
       <Input placeholder="Basic Usage" />
 
       <h5>Size</h5>
-      <Input placeholder="Small size" textArea={false} size="sm" />
-      <Input placeholder="Middle size" textArea={false} size="md" />
-      <Input placeholder="Large size" textArea={false} size="lg" />
+      <Input placeholder="Small size" size="small" />
+      <Input placeholder="Middle size" size="default" />
+      <Input placeholder="Large size" size="large" />
 
       <h5>textArea & maxLength</h5>
-      <Input placeholder="Text Area" textArea={true} />
-      <Input placeholder="Max length : 5" textMaxtLength={5} />
+      <Input placeholder="Text Area" />
+      <Input placeholder="Max length : 5" />
 
       <h5>icon</h5>
-      <Input icon={true} placeholder="Basic Icon" />
+      <Input placeholder="Basic Icon" />
     </Container>
   );
 };

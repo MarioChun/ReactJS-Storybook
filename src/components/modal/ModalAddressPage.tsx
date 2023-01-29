@@ -1,8 +1,8 @@
 import { useState } from "react";
 import useModal from "../../hook/useModal";
-import InputNew from "../input/InputNew";
+import Input from "../input/Input";
 import styles from "./ModalTestPage.module.scss";
-import ButtonNew from "../button/ButtonNew";
+import ButtonNew from "../button/Button";
 
 const ModalAdressPage = () => {
   const confirmModal = useModal();
@@ -12,11 +12,11 @@ const ModalAdressPage = () => {
   return (
     <div className={styles.postCodeModalContainer}>
       <div className={styles.postCodeContainer}>
-        <InputNew value={postCode} readOnly={true} />
+        <Input value={postCode} readOnly={true} />
         <ButtonNew text={"주소찾기"} onClick={postCodeModal.handleOpen} />
       </div>
       <div>
-        <InputNew value={address1} readOnly={true} />
+        <Input value={address1} readOnly={true} />
       </div>
       {/* <PostCodeModal
         useModalProps={postCodeModal}
@@ -26,7 +26,7 @@ const ModalAdressPage = () => {
         }}
       />
       <div>
-        <InputNew />
+        <Input />
       </div>
       <div className={styles.submitButtonContainer}>
         <ButtonNew

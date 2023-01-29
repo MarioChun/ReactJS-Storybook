@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-const ResetStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
 font-family: 'Source Sans Pro', sans-serif;
 html, body, div, span, applet, object, iframe,
@@ -59,4 +59,4 @@ a{
 }
 `;
 
-export default ResetStyle;
+export default GlobalStyle;
