@@ -1,0 +1,95 @@
+.list-search-container {
+  width: 600px;
+  padding: 20px;
+}
+
+.search-value-container {
+  display: grid;
+  gap: 10px;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+.search-button {
+  border: none;
+  background: red;
+  padding: 10px 20px;
+  color: white;
+}
+
+.shortcut-button-container {
+  margin-top: 20px;
+  font-size: 12px;
+  display: grid;
+  gap: 10px;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+.shortcut-button-container label {
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.shortcut-button {
+  border: none;
+  background: #efefef;
+  padding: 10px 20px;
+  color: black;
+
+  cursor: pointer;
+}
+
+.shortcut-button:hover {
+  background: black;
+  color: white;
+}
+
+.search-input {
+  border: 1px solid #afafaf;
+
+  padding: 10px 20px;
+}
+
+.list-search-result {
+  border: 1px dashed #afafaf;
+  width: 600px;
+  height: 300px;
+  overflow: auto;
+}
+
+.list-container {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.list-container li {
+  cursor: pointer;
+  background: white;
+  border: 1px solid #afafaf;
+
+  width: fit-content;
+  padding: 10px 20px;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+}
+
+.list-container li:hover {
+  color: white;
+  background: red;
+  border-color: red;
+}
+
+.detail-container {
+  margin-top: 20px;
+  border: 1px dashed #afafaf;
+  padding: 20px;
+  width: 360px;
+  height: 300px;
+}
