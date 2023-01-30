@@ -92,3 +92,18 @@
     border: 1px solid black;
   }
 }
+
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userInfo .profileImage {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 30px;
+  border: 0.5px solid black;
+}

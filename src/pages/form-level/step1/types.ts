@@ -29,9 +29,11 @@ export type UserForm = {
 };
 
 // createUser를 만들때 사용하는 타입
-export type UserCreate = {
-  name: string;
-  birth: Date;
-  gender: "FEMALE" | "MALE";
-  profileImageUrl: string;
-};
+// export type UserCreate = {
+//   name: string;
+//   birth: Date;
+//   gender: "FEMALE" | "MALE";
+//   profileImageUrl: string;
+// };
+
+export type UserCreate = Omit<User, "id">;

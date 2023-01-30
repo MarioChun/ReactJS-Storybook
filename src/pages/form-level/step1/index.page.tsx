@@ -1,25 +1,75 @@
-import { useEffect, useState } from "react";
 import styles from "./index.module.scss";
-import { User, UserForm } from "./types";
+import { useEffect, useState } from "react";
+import { User, UserCreate, UserForm } from "./types";
 import { UserDB } from "./user-db";
+import dayjs from "dayjs";
+import Modal from "../../../components/modal/Modal";
+import useModal from "../../../hook/useModal";
 
-const DummyUser: UserForm = {
-  name: "김땡땡",
-  birth: "1993-01-20",
-  gender: "M",
-  profileImageUrl: "https://picsum.photos/200/300",
+// const DummyUser: UserForm = {
+//   name: '김땡땡',
+//   birth: '1993-01-20',
+//   gender: 'F',
+//   profileImageUrl: 'https://picsum.photos/200/300',
+// };
+
+const DefaultUser: UserForm = {
+  name: "",
+  birth: dayjs().format("YYYY-MM-DD"),
+  gender: "F",
+  profileImageUrl: "",
 };
 
-const FormLevel1Page = () => {
-  const [list, setList] = useState<User[]>([]);
-
-  const [form, setForm] = useState<UserForm>(DummyUser);
+const FormLevelPage = () => {
+  const { isOpen, handleOpen, handleClose } = useModal();
+  const [userList, setUserList] = useState<User[]>([]);
+  const [form, setForm] = useState<UserForm>(DefaultUser);
 
   useEffect(() => {
-    setList(UserDB.select());
+    const userList = UserDB.select();
+    setUserList(userList);
   }, []);
 
-  console.log(form);
+  const handleChangeName = (name: string) => {
+    setForm({
+      ...form,
+      name,
+    });
+  };
+
+  const handleChangeBirth = (birth: string) => {
+    setForm({
+      ...form,
+      birth,
+    });
+  };
+
+  const handleChangeGender = (gender: "F" | "M") => {
+    setForm({
+      ...form,
+      gender,
+    });
+  };
+
+  const handleChangeImage = (file: File) => {
+    setForm({
+      ...form,
+      profileImageUrl: URL.createObjectURL(file),
+    });
+  };
+
+  const handleSubmit = () => {
+    const user: UserCreate = {
+      name: form.name || "",
+      birth: dayjs(form.birth).toDate(),
+      gender: form.gender === "F" ? "FEMALE" : "MALE",
+      profileImageUrl: form.profileImageUrl || "",
+    };
+    UserDB.create(user);
+    setUserList([...UserDB.select()]);
+    setForm(DefaultUser);
+  };
+
   return (
     <div className={styles.pageContainer}>
       <h1 className={styles.pageTitle}>회원관리</h1>
@@ -30,18 +80,11 @@ const FormLevel1Page = () => {
             <div className={styles.formWrapper}>
               <label htmlFor={"name"}>이름</label>
               <input
-                value={form.name}
                 type={"text"}
                 id={"name"}
                 className={styles.inputText}
-                onChange={(event) => {
-                  const name = event.target.value;
-
-                  setForm({
-                    ...form,
-                    name,
-                  });
-                }}
+                value={form.name}
+                onChange={(event) => handleChangeName(event.target.value)}
               />
             </div>
             <div className={styles.formWrapper}>
@@ -51,14 +94,7 @@ const FormLevel1Page = () => {
                 id={"birth"}
                 className={styles.inputText}
                 value={form.birth}
-                onChange={(event) => {
-                  const birth = event.target.value;
-                  console.log(birth);
-                  setForm({
-                    ...form,
-                    birth,
-                  });
-                }}
+                onChange={(event) => handleChangeBirth(event.target.value)}
               />
             </div>
             <div className={styles.formWrapper}>
@@ -69,30 +105,16 @@ const FormLevel1Page = () => {
                   type={"radio"}
                   name={"gender"}
                   id={"genderF"}
-                  value={"F"}
                   checked={form.gender === "F"}
-                  onChange={(event) => {
-                    const gender = event.target.value as "F" | "M";
-                    setForm({
-                      ...form,
-                      gender,
-                    });
-                  }}
+                  onChange={() => handleChangeGender("F")}
                 />
                 <label htmlFor={"genderM"}>여</label>
                 <input
                   type={"radio"}
                   name={"gender"}
                   id={"genderM"}
-                  value={"M"}
                   checked={form.gender === "M"}
-                  onChange={(event) => {
-                    const gender = event.target.value as "F" | "M";
-                    setForm({
-                      ...form,
-                      gender,
-                    });
-                  }}
+                  onChange={() => handleChangeGender("M")}
                 />
               </div>
             </div>
@@ -104,12 +126,9 @@ const FormLevel1Page = () => {
                   type={"file"}
                   id={"profileImage"}
                   onChange={(event) => {
-                    const img = event.target.files?.[0];
-                    if (!img) return;
-                    setForm({
-                      ...form,
-                      profileImageUrl: URL.createObjectURL(img),
-                    });
+                    if (event.target.files?.[0]) {
+                      handleChangeImage(event.target.files[0]);
+                    }
                   }}
                 />
               </div>
@@ -118,16 +137,7 @@ const FormLevel1Page = () => {
           <button
             type={"submit"}
             className={styles.submitButton}
-            onClick={() => {
-              UserDB.create({
-                name: form.name || "",
-                birth: new Date(),
-                gender: form.gender === "F" ? "FEMALE" : "MALE",
-                profileImageUrl: form.profileImageUrl || "",
-              });
-
-              setList([...UserDB.select()]);
-            }}
+            onClick={handleSubmit}
           >
             추가
           </button>
@@ -135,8 +145,8 @@ const FormLevel1Page = () => {
         <div className={styles.section}>
           <h3>회원목록</h3>
           <ul className={styles.userList}>
-            {list.map((user) => (
-              <li className={styles.userItem}>
+            {userList.map((user, index) => (
+              <li className={styles.userItem} key={index}>
                 <img
                   className={styles.profileImage}
                   src={user.profileImageUrl}
@@ -146,8 +156,25 @@ const FormLevel1Page = () => {
           </ul>
         </div>
       </div>
+
+      {isOpen && (
+        <Modal onClose={handleClose}>
+          <div className={styles.userInfo}>
+            <img
+              src={"https://randomuser.me/api/portraits/women/14.jpg"}
+              className={styles.profileImage}
+            />
+            <div>
+              <div>아이디: 12345</div>
+              <div>이름: 김땡땡</div>
+              <div>생년월일: 1993/01/20</div>
+              <div>성별: 여</div>
+            </div>
+          </div>
+        </Modal>
+      )}
     </div>
   );
 };
 
-export default FormLevel1Page;
+export default FormLevelPage;
