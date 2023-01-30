@@ -38,6 +38,7 @@ export const UserDB: IUserDB = {
       profileImageUrl: "https://randomuser.me/api/portraits/men/18.jpg",
     },
   ],
+
   select: function () {
     return this._userList;
   },

@@ -1,14 +1,16 @@
+import { useState } from "react";
 import styles from "./index.module.scss";
 import { UserForm } from "./types";
 
 const DummyData: UserForm = {
   name: "Mario",
-  birth: new Date(),
+  birth: "1993-01-20",
   gender: "MALE",
   profileImageUrl: "https://randomuser.me/api/portraits/women/10.jpg",
 };
 
 const FormLevelPageStudy = () => {
+  const [form, setForm] = useState<UserForm>(DummyData);
   return (
     <div className={styles.pageContainer}>
       <h1 className={styles.pageTitle}>회원관리</h1>
@@ -19,7 +21,7 @@ const FormLevelPageStudy = () => {
             <div className={styles.formWrapper}>
               <label htmlFor={"name"}>이름</label>
               <input
-                value={DummyData.name}
+                value={form.name}
                 type={"text"}
                 id={"name"}
                 className={styles.inputText}

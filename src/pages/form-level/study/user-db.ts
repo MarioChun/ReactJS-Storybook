@@ -1,7 +1,7 @@
 import userEvent from "@testing-library/user-event";
-import { IuserDB, User } from "./types";
+import { IUserDB, User } from "./types";
 
-export const UserDB: IuserDB = {
+export const UserDB: IUserDB = {
   _userList: [
     {
       id: 1,
