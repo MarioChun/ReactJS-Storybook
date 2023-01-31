@@ -42,6 +42,11 @@ export const UserDB: IUserDB = {
   select: function () {
     return this._userList;
   },
+  // select: function () {
+  //   return new Promise<IUserDB>((resolve) => {
+  //     resolve(this._userList);
+  //   });
+  // },
   selectById: function (id: number) {
     if (!id) {
       throw Error("UserDB.selectById : id required");

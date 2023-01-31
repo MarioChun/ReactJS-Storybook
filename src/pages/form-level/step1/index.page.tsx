@@ -21,13 +21,26 @@ const DefaultUser: UserForm = {
 };
 
 const FormLevelPage = () => {
-  const { isOpen, handleOpen, handleClose } = useModal();
   const [userList, setUserList] = useState<User[]>([]);
   const [form, setForm] = useState<UserForm>(DefaultUser);
 
+  const [user, setUser] = useState<User>();
+  const { isOpen, handleOpen, handleClose } = useModal();
+
   useEffect(() => {
-    const userList = UserDB.select();
-    setUserList(userList);
+    //localStorage.removeItem("userList");
+
+    // output 이 null 일때 UserDB에서 가져옴
+    //const userList = UserDB.select();
+    //localStorage.setItem("userList", JSON.stringify(userList));
+
+    const output = localStorage.getItem("userList");
+    if (!output) {
+      throw new Error("No saved todos");
+    }
+    const arr_result = JSON.parse(output);
+
+    setUserList(arr_result);
   }, []);
 
   const handleChangeName = (name: string) => {
@@ -66,7 +79,18 @@ const FormLevelPage = () => {
       profileImageUrl: form.profileImageUrl || "",
     };
     UserDB.create(user);
-    setUserList([...UserDB.select()]);
+
+    localStorage.removeItem("userList");
+    localStorage.setItem("userList", JSON.stringify([...UserDB.select()]));
+
+    const output = localStorage.getItem("userList");
+    if (!output) {
+      throw new Error("No saved todos");
+    }
+    const arr_result = JSON.parse(output);
+    console.log(arr_result);
+    //setUserList([...UserDB.select()]);
+    setUserList(arr_result);
     setForm(DefaultUser);
   };
 
@@ -146,7 +170,15 @@ const FormLevelPage = () => {
           <h3>회원목록</h3>
           <ul className={styles.userList}>
             {userList.map((user, index) => (
-              <li className={styles.userItem} key={index}>
+              <li
+                className={styles.userItem}
+                key={index}
+                onClick={() => {
+                  // state에 데이터를 갱신하고, 모달을 엽니다!
+                  setUser(user);
+                  handleOpen();
+                }}
+              >
                 <img
                   className={styles.profileImage}
                   src={user.profileImageUrl}
@@ -160,15 +192,12 @@ const FormLevelPage = () => {
       {isOpen && (
         <Modal onClose={handleClose}>
           <div className={styles.userInfo}>
-            <img
-              src={"https://randomuser.me/api/portraits/women/14.jpg"}
-              className={styles.profileImage}
-            />
+            <img src={user?.profileImageUrl} className={styles.profileImage} />
             <div>
-              <div>아이디: 12345</div>
-              <div>이름: 김땡땡</div>
-              <div>생년월일: 1993/01/20</div>
-              <div>성별: 여</div>
+              <div>아이디: {user?.id}</div>
+              <div>이름: {user?.name}</div>
+              <div>생년월일: {dayjs(user?.birth).format("YYYY/MM/DD")}</div>
+              <div>성별: {user?.gender === "FEMALE" ? "남" : "여"}</div>
             </div>
           </div>
         </Modal>
