@@ -16,7 +16,8 @@ export type User = {
 */
 export interface IUserDB {
   _userList: User[];
-  select: () => User[];
+  // select: () => User[];
+  select: () => Promise<User[]>;
   selectById: (id: number) => User | undefined;
   create: (user: UserCreate) => void;
 }

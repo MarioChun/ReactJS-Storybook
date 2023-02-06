@@ -81,7 +81,7 @@ const FormLevelPage = () => {
     UserDB.create(user);
 
     localStorage.removeItem("userList");
-    localStorage.setItem("userList", JSON.stringify([...UserDB.select()]));
+    // localStorage.setItem("userList", JSON.stringify([...UserDB.select().then(()=>{})]));
 
     const output = localStorage.getItem("userList");
     if (!output) {
